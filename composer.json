@@ -1,0 +1,13 @@
+{
+  "name": "websk/php-view",
+  "require": {
+    "psr/container": "^1.0",
+    "websk/php-utils": "dev-master",
+    "websk/php-slim": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  }
+}
