@@ -88,13 +88,23 @@ class PhpRender
     public static function renderTemplateByModule(string $module, string $template, array $variables = [])
     {
         $site_modules_file_path = ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module . DIRECTORY_SEPARATOR . $template;
+
         if (!file_exists(ViewsPath::getFullTemplatePath($site_modules_file_path))) {
-            return '';
+            return self::renderTemplate(
+                $site_modules_file_path,
+                $variables
+            );
         }
 
-        return self::renderTemplate(
-            $site_modules_file_path,
-            $variables
-        );
+        extract($variables, EXTR_SKIP);
+        ob_start();
+
+        require ViewsPath::getSiteSrcPath() . DIRECTORY_SEPARATOR . $module . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME . DIRECTORY_SEPARATOR . $template;
+
+        $contents = ob_get_contents();
+
+        ob_end_clean();
+
+        return $contents;
     }
 }
