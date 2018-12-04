@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8fcae302d5b3fe805e43d76ac4085c4a",
+    "content-hash": "21509687a104275524ee52c51e645c69",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -354,7 +354,7 @@
         },
         {
             "name": "websk/php-slim",
-            "version": "dev-master",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/websk/php-slim.git",
@@ -383,7 +383,7 @@
         },
         {
             "name": "websk/php-utils",
-            "version": "dev-master",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/websk/php-utils.git",
@@ -408,10 +408,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "websk/php-utils": 20,
-        "websk/php-slim": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
