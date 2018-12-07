@@ -16,7 +16,7 @@ class ViewsPath
 
     public static function getSiteSrcPath()
     {
-        return ConfWrapper::value('site_path') . DIRECTORY_SEPARATOR . self::SRC_DIR_NAME;
+        return ConfWrapper::value('site_full_path') . DIRECTORY_SEPARATOR . self::SRC_DIR_NAME;
     }
 
     /**
@@ -24,7 +24,7 @@ class ViewsPath
      */
     public static function getSiteViewsPath()
     {
-        return ConfWrapper::value('site_path') . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME;
+        return ConfWrapper::value('site_full_path') . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME;
     }
 
     /**
