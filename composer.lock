@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "21509687a104275524ee52c51e645c69",
+    "content-hash": "c93e9e28b9866394ef5de66628ce4835",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -351,6 +351,31 @@
                 "router"
             ],
             "time": "2018-09-16T10:54:21+00:00"
+        },
+        {
+            "name": "websk/php-config",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/websk/php-config.git",
+                "reference": "806f75eafc1536c2543f383875503f12c72bcfe3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/websk/php-config/zipball/806f75eafc1536c2543f383875503f12c72bcfe3",
+                "reference": "806f75eafc1536c2543f383875503f12c72bcfe3",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "PHP configs wrapper",
+            "homepage": "https://websk.ru/",
+            "time": "2018-12-03T15:24:53+00:00"
         },
         {
             "name": "websk/php-slim",

@@ -3,6 +3,7 @@
   "require": {
     "psr/container": "^1.0",
     "websk/php-utils": "1.0.*",
+    "websk/php-config": "1.0.*",
     "websk/php-slim": "1.0.*"
   },
   "autoload": {
