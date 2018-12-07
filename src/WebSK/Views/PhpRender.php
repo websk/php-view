@@ -43,14 +43,27 @@ class PhpRender
         string $template,
         array $data = []
     ) {
-        $cb_arr = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT);
-        $caller_obj = array_shift($cb_arr);
-        Assert::assert($caller_obj);
+        $caller_dir = self::getCallerDir();
 
-        $caller_path = $caller_obj['file'];
-        $caller_path_arr = pathinfo($caller_path);
+        $data['response'] = $response;
 
-        $caller_dir = $caller_path_arr['dirname'];
+        $php_renderer = new PhpRenderer($caller_dir);
+
+        return $php_renderer->render($response, $template, $data);
+    }
+
+    /**
+     * @param ResponseInterface $response
+     * @param string $template
+     * @param array $data
+     * @return ResponseInterface
+     */
+    public static function renderInViewsDir(
+        ResponseInterface $response,
+        string $template,
+        array $data = []
+    ) {
+        $caller_dir = self::getCallerDir();
 
         $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME;
 
@@ -115,14 +128,32 @@ class PhpRender
      * @throws \Exception
      */
     public static function renderLocalTemplate(string $template, array $data = []) {
-        $cb_arr = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT);
-        $caller_obj = array_shift($cb_arr);
-        Assert::assert($caller_obj);
 
-        $caller_path = $caller_obj['file'];
-        $caller_path_arr = pathinfo($caller_path);
+        $caller_dir = self::getCallerDir();
 
-        $caller_dir = $caller_path_arr['dirname'];
+        $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . $template;
+
+        extract($data, EXTR_SKIP);
+        ob_start();
+
+        require $full_template_path;
+
+        $contents = ob_get_contents();
+
+        ob_end_clean();
+
+        return $contents;
+    }
+
+    /**
+     * @param string $template
+     * @param array $data
+     * @return false|string
+     * @throws \Exception
+     */
+    public static function renderTemplateInViewsDir(string $template, array $data = []) {
+
+        $caller_dir = self::getCallerDir();
 
         $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME . DIRECTORY_SEPARATOR . $template;
 
@@ -136,5 +167,22 @@ class PhpRender
         ob_end_clean();
 
         return $contents;
+    }
+
+    /**
+     * @return string
+     */
+    protected static function getCallerDir()
+    {
+        $cb_arr = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT);
+        $caller_obj = array_shift($cb_arr);
+        Assert::assert($caller_obj);
+
+        $caller_path = $caller_obj['file'];
+        $caller_path_arr = pathinfo($caller_path);
+
+        $caller_dir = $caller_path_arr['dirname'] ?? '';
+
+        return $caller_dir;
     }
 }
