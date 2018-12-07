@@ -43,7 +43,7 @@ class PhpRender
         string $template,
         array $data = []
     ) {
-        $caller_dir = static::getCallerDir();
+        $caller_dir = self::getCallerDir();
 
         $data['response'] = $response;
 
@@ -63,7 +63,7 @@ class PhpRender
         string $template,
         array $data = []
     ) {
-        $caller_dir = static::getCallerDir();
+        $caller_dir = self::getCallerDir();
 
         $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME;
 
@@ -129,7 +129,7 @@ class PhpRender
      */
     public static function renderLocalTemplate(string $template, array $data = []) {
 
-        $caller_dir = static::getCallerDir();
+        $caller_dir = self::getCallerDir();
 
         $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . $template;
 
@@ -153,7 +153,7 @@ class PhpRender
      */
     public static function renderTemplateInViewsDir(string $template, array $data = []) {
 
-        $caller_dir = static::getCallerDir();
+        $caller_dir = self::getCallerDir();
 
         $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME . DIRECTORY_SEPARATOR . $template;
 
@@ -175,7 +175,7 @@ class PhpRender
     protected static function getCallerDir()
     {
         $cb_arr = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT);
-        $caller_obj = array_shift($cb_arr);
+        $caller_obj = $cb_arr[1] ?? null;
         Assert::assert($caller_obj);
 
         $caller_path = $caller_obj['file'];
