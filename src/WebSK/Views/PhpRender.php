@@ -43,7 +43,7 @@ class PhpRender
         string $template,
         array $data = []
     ) {
-        $caller_dir = self::getCallerDir();
+        $caller_dir = static::getCallerDir();
 
         $data['response'] = $response;
 
@@ -63,7 +63,7 @@ class PhpRender
         string $template,
         array $data = []
     ) {
-        $caller_dir = self::getCallerDir();
+        $caller_dir = static::getCallerDir();
 
         $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME;
 
@@ -129,7 +129,7 @@ class PhpRender
      */
     public static function renderLocalTemplate(string $template, array $data = []) {
 
-        $caller_dir = self::getCallerDir();
+        $caller_dir = static::getCallerDir();
 
         $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . $template;
 
@@ -153,7 +153,7 @@ class PhpRender
      */
     public static function renderTemplateInViewsDir(string $template, array $data = []) {
 
-        $caller_dir = self::getCallerDir();
+        $caller_dir = static::getCallerDir();
 
         $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME . DIRECTORY_SEPARATOR . $template;
 
