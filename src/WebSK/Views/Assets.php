@@ -11,7 +11,7 @@ use WebSK\Utils\Url;
  */
 class Assets
 {
-    public const ASSETS_DIR_NAME = 'assets';
+    const ASSETS_DIR_NAME = 'assets';
 
     /**
      * @param $resource

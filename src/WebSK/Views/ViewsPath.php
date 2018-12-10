@@ -10,9 +10,9 @@ use WebSK\Config\ConfWrapper;
  */
 class ViewsPath
 {
-    public const VIEWS_DIR_NAME = 'views';
-    public const VIEWS_MODULES_DIR = 'modules';
-    public const SRC_DIR_NAME = 'src';
+    const VIEWS_DIR_NAME = 'views';
+    const VIEWS_MODULES_DIR = 'modules';
+    const SRC_DIR_NAME = 'src';
 
     public static function getSiteSrcPath()
     {
