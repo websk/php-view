@@ -4,7 +4,7 @@ namespace WebSK\Views;
 
 use Psr\Http\Message\ResponseInterface;
 use Slim\Views\PhpRenderer;
-use Websk\Utils\Assert;
+use WebSK\Utils\Assert;
 
 /**
  * Class PhpRender

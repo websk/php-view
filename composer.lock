@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "c93e9e28b9866394ef5de66628ce4835",
@@ -408,17 +408,20 @@
         },
         {
             "name": "websk/php-utils",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/websk/php-utils.git",
-                "reference": "b48a4e221245d16a1e61f287d38d561b1cd78f0a"
+                "reference": "e6a4861c8a918fb9953b0c4e46072d765fbd592b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websk/php-utils/zipball/b48a4e221245d16a1e61f287d38d561b1cd78f0a",
-                "reference": "b48a4e221245d16a1e61f287d38d561b1cd78f0a",
+                "url": "https://api.github.com/repos/websk/php-utils/zipball/e6a4861c8a918fb9953b0c4e46072d765fbd592b",
+                "reference": "e6a4861c8a918fb9953b0c4e46072d765fbd592b",
                 "shasum": ""
+            },
+            "require": {
+                "websk/php-config": "1.0.*"
             },
             "type": "library",
             "autoload": {
@@ -427,7 +430,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2018-11-30T11:47:29+00:00"
+            "time": "2018-12-10T19:13:25+00:00"
         }
     ],
     "packages-dev": [],
