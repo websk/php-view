@@ -4,6 +4,8 @@ namespace WebSK\Views;
 
 use Psr\Http\Message\ResponseInterface;
 use Slim\Views\PhpRenderer;
+use WebSK\Config\ConfWrapper;
+use WebSK\Slim\Request;
 use WebSK\Utils\Assert;
 
 /**
@@ -184,5 +186,31 @@ class PhpRender
         $caller_dir = $caller_path_arr['dirname'] ?? '';
 
         return $caller_dir;
+    }
+
+    /**
+     * @param ResponseInterface $response
+     * @param string $template,
+     * @param LayoutDTO $layout_dto
+     * @return ResponseInterface
+     */
+    public static function renderLayout(ResponseInterface $response, string $template, LayoutDTO $layout_dto)
+    {
+        if (!$layout_dto->getSiteTitle()) {
+            $layout_dto->setSiteTitle(ConfWrapper::value('site_title', ''));
+        }
+
+        if (!$layout_dto->getShortSiteTitle()) {
+            $short_site_title = ConfWrapper::value('short_site_title', mb_substr($layout_dto->getSiteTitle(), 0, 3));
+            $layout_dto->setShortSiteTitle($short_site_title);
+        }
+
+        if (!$layout_dto->getPageUrl()) {
+            $layout_dto->setPageUrl(Request::self()->getUri()->getPath());
+        }
+
+        $data['layout_dto'] = $layout_dto;
+
+        return self::render($response, $template, $data);
     }
 }
