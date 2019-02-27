@@ -33,6 +33,22 @@ class ViewsPath
      */
     public static function getFullTemplatePath(string $template)
     {
-        return ViewsPath::getSiteViewsPath() . DIRECTORY_SEPARATOR . $template;
+        return self::getSiteViewsPath() . DIRECTORY_SEPARATOR . $template;
+    }
+
+    /**
+     * @param string $module
+     * @param string $template
+     * @return bool
+     */
+    public static function existsTemplateByModuleRelativeToRootSitePath(string $module, string $template)
+    {
+        $site_modules_file_path = ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module . DIRECTORY_SEPARATOR . $template;
+
+        if (file_exists(self::getFullTemplatePath($site_modules_file_path))) {
+            return true;
+        }
+
+        return false;
     }
 }
