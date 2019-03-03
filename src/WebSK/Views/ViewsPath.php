@@ -33,7 +33,7 @@ class ViewsPath
      */
     public static function getFullTemplatePath(string $template)
     {
-        return self::getSiteViewsPath() . DIRECTORY_SEPARATOR . $template;
+        return ConfWrapper::value('site_full_path') . DIRECTORY_SEPARATOR . $template;
     }
 
     /**
