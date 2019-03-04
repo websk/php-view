@@ -108,7 +108,9 @@ class PhpRender
         }
 
         $caller_dir = self::getCallerDir();
-        $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME . DIRECTORY_SEPARATOR . $template;
+        $offset_namespace = strpos($caller_dir, $module_namespace);
+
+        $full_template_path = substr($caller_dir, 0, $offset_namespace) . $module_namespace . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME . DIRECTORY_SEPARATOR . $template;
 
         return self::renderTemplate($full_template_path, $data);
     }
