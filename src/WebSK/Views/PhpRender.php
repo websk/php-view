@@ -93,15 +93,15 @@ class PhpRender
     }
 
     /**
-     * @param string $module
+     * @param string $module_namespace
      * @param string $template
      * @param array $data
      * @return false|string
      */
-    public static function renderTemplateByModule(string $module, string $template, array $data = [])
+    public static function renderTemplateForModuleNamespace(string $module_namespace, string $template, array $data = [])
     {
-        if (ViewsPath::existsTemplateByModuleRelativeToRootSitePath($module, $template)) {
-            $site_modules_file_path = ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module . DIRECTORY_SEPARATOR . $template;
+        if (ViewsPath::existsTemplateByModuleRelativeToRootSitePath($module_namespace, $template)) {
+            $site_modules_file_path = ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module_namespace . DIRECTORY_SEPARATOR . $template;
 
             $full_template_path = ViewsPath::getFullTemplatePath($site_modules_file_path);
             return self::renderTemplate($full_template_path, $data);
