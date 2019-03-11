@@ -43,9 +43,9 @@ class ViewsPath
      */
     public static function existsTemplateByModuleRelativeToRootSitePath(string $module, string $template)
     {
-        $site_modules_file_path = ViewsPath::VIEWS_DIR_NAME .  DIRECTORY_SEPARATOR . ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module . DIRECTORY_SEPARATOR . $template;
+        $template_path = ViewsPath::VIEWS_DIR_NAME .  DIRECTORY_SEPARATOR . ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module . DIRECTORY_SEPARATOR . $template;
 
-        if (file_exists(self::getFullTemplatePath($site_modules_file_path))) {
+        if (file_exists(self::getFullTemplatePath($template_path))) {
             return true;
         }
 

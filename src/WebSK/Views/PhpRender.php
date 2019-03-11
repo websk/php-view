@@ -101,9 +101,10 @@ class PhpRender
     public static function renderTemplateForModuleNamespace(string $module_namespace, string $template, array $data = [])
     {
         if (ViewsPath::existsTemplateByModuleRelativeToRootSitePath($module_namespace, $template)) {
-            $site_modules_file_path = ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module_namespace . DIRECTORY_SEPARATOR . $template;
+            $template_path = ViewsPath::VIEWS_DIR_NAME .  DIRECTORY_SEPARATOR . ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module_namespace . DIRECTORY_SEPARATOR . $template;
 
-            $full_template_path = ViewsPath::getFullTemplatePath($site_modules_file_path);
+            $full_template_path = ViewsPath::getFullTemplatePath($template_path);
+
             return self::renderTemplate($full_template_path, $data);
         }
 
