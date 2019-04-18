@@ -39,7 +39,13 @@ class LayoutDTO
     protected $nav_tabs_dto_arr = [];
 
     /** @var BreadcrumbItemDTO[] */
-    protected $breadcrumbs_dto_arr= [];
+    protected $breadcrumbs_dto_arr = [];
+
+    /** @var string */
+    protected $description = '';
+
+    /** @var string */
+    protected $keywords = '';
 
     /**
      * @return string
@@ -215,5 +221,37 @@ class LayoutDTO
     public function setBreadcrumbsDtoArr(array $breadcrumbs_dto_arr): void
     {
         $this->breadcrumbs_dto_arr = $breadcrumbs_dto_arr;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKeywords(): string
+    {
+        return $this->keywords;
+    }
+
+    /**
+     * @param string $keywords
+     */
+    public function setKeywords(string $keywords): void
+    {
+        $this->keywords = $keywords;
     }
 }
