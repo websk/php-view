@@ -93,15 +93,15 @@ class PhpRender
     }
 
     /**
-     * @param string $module_namespace
+     * @param string $module_namespace_dir
      * @param string $template
      * @param array $data
      * @return false|string
      */
-    public static function renderTemplateForModuleNamespace(string $module_namespace, string $template, array $data = [])
+    public static function renderTemplateForModuleNamespace(string $module_namespace_dir, string $template, array $data = [])
     {
-        if (ViewsPath::existsTemplateByModuleRelativeToRootSitePath($module_namespace, $template)) {
-            $template_path = ViewsPath::VIEWS_DIR_NAME .  DIRECTORY_SEPARATOR . ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module_namespace . DIRECTORY_SEPARATOR . $template;
+        if (ViewsPath::existsTemplateByModuleRelativeToRootSitePath($module_namespace_dir, $template)) {
+            $template_path = ViewsPath::VIEWS_DIR_NAME .  DIRECTORY_SEPARATOR . ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module_namespace_dir . DIRECTORY_SEPARATOR . $template;
 
             $full_template_path = ViewsPath::getFullTemplatePath($template_path);
 
@@ -109,9 +109,9 @@ class PhpRender
         }
 
         $caller_dir = self::getCallerDir();
-        $offset_namespace = strpos($caller_dir, $module_namespace);
+        $offset_namespace = strpos($caller_dir, $module_namespace_dir);
 
-        $full_template_path = substr($caller_dir, 0, $offset_namespace) . $module_namespace . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME . DIRECTORY_SEPARATOR . $template;
+        $full_template_path = substr($caller_dir, 0, $offset_namespace) . $module_namespace_dir . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME . DIRECTORY_SEPARATOR . $template;
 
         return self::renderTemplate($full_template_path, $data);
     }
