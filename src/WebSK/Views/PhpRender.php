@@ -24,7 +24,7 @@ class PhpRender
         ResponseInterface $response,
         string $template,
         array $data = []
-    ) {
+    ): ResponseInterface {
         $data['response'] = $response;
 
         $php_renderer = new PhpRenderer();
@@ -42,7 +42,7 @@ class PhpRender
         ResponseInterface $response,
         string $template,
         array $data = []
-    ) {
+    ): ResponseInterface {
         $caller_dir = self::getCallerDir();
 
         $data['response'] = $response;
@@ -62,7 +62,7 @@ class PhpRender
         ResponseInterface $response,
         string $template,
         array $data = []
-    ) {
+    ): ResponseInterface {
         $caller_dir = self::getCallerDir();
 
         $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME;
@@ -79,7 +79,7 @@ class PhpRender
      * @param array $data
      * @return string
      */
-    public static function renderTemplate(string $template, array $data = [])
+    public static function renderTemplate(string $template, array $data = []): string
     {
         extract($data, EXTR_SKIP);
         ob_start();
@@ -96,9 +96,9 @@ class PhpRender
      * @param string $module_namespace_dir
      * @param string $template
      * @param array $data
-     * @return false|string
+     * @return string
      */
-    public static function renderTemplateForModuleNamespace(string $module_namespace_dir, string $template, array $data = [])
+    public static function renderTemplateForModuleNamespace(string $module_namespace_dir, string $template, array $data = []): string
     {
         if (ViewsPath::existsTemplateByModuleRelativeToRootSitePath($module_namespace_dir, $template)) {
             $template_path = ViewsPath::VIEWS_DIR_NAME .  DIRECTORY_SEPARATOR . ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module_namespace_dir . DIRECTORY_SEPARATOR . $template;
@@ -119,10 +119,10 @@ class PhpRender
     /**
      * @param string $template
      * @param array $data
-     * @return false|string
+     * @return string
      * @throws \Exception
      */
-    public static function renderLocalTemplate(string $template, array $data = [])
+    public static function renderLocalTemplate(string $template, array $data = []): string
     {
         $caller_dir = self::getCallerDir();
         $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . $template;
@@ -133,10 +133,10 @@ class PhpRender
     /**
      * @param string $template
      * @param array $data
-     * @return false|string
+     * @return string
      * @throws \Exception
      */
-    public static function renderTemplateInViewsDir(string $template, array $data = [])
+    public static function renderTemplateInViewsDir(string $template, array $data = []): string
     {
         $caller_dir = self::getCallerDir();
         $full_template_path = $caller_dir . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME . DIRECTORY_SEPARATOR . $template;
@@ -147,7 +147,7 @@ class PhpRender
     /**
      * @return string
      */
-    private static function getCallerDir()
+    private static function getCallerDir(): string
     {
         $cb_arr = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT);
         $caller_obj = $cb_arr[1] ?? null;
@@ -167,7 +167,7 @@ class PhpRender
      * @param LayoutDTO $layout_dto
      * @return ResponseInterface
      */
-    public static function renderLayout(ResponseInterface $response, string $template, LayoutDTO $layout_dto)
+    public static function renderLayout(ResponseInterface $response, string $template, LayoutDTO $layout_dto): ResponseInterface
     {
         if (!$layout_dto->getSiteTitle()) {
             $layout_dto->setSiteTitle(ConfWrapper::value('site_title', ''));

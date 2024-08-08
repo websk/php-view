@@ -9,10 +9,10 @@ namespace WebSK\Views;
 class BreadcrumbItemDTO
 {
     /** @var string */
-    protected $name = '';
+    protected string $name = '';
 
     /** @var string */
-    protected $url = '';
+    protected string $url = '';
 
     /**
      * BreadcrumbItemDTO constructor.

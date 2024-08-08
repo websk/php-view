@@ -8,14 +8,11 @@ namespace WebSK\Views;
  */
 class NavTabItemDTO
 {
-    /** @var string */
-    protected $name = '';
+    protected string $name = '';
 
-    /** @var string */
-    protected $url = '';
+    protected string $url = '';
 
-    /** @var string */
-    protected $target = '';
+    protected string $target = '';
 
     /**
      * NavTabItemDTO constructor.

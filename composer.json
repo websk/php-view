@@ -1,10 +1,10 @@
 {
   "name": "websk/php-view",
   "require": {
-    "psr/container": "^1.0",
-    "websk/php-utils": "1.0.*",
-    "websk/php-config": "1.0.*",
-    "websk/php-slim": "1.1.*",
+    "php": "^8.3",
+    "websk/php-utils": "2.0.*",
+    "websk/php-config": "2.0.*",
+    "websk/php-slim": "2.0.*",
     "ext-mbstring": "*"
   },
   "autoload": {

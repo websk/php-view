@@ -8,16 +8,16 @@ namespace WebSK\Views;
  */
 class MenuItemDTO
 {
-    /** @var string */
-    protected $text = '';
-    /** @var string */
-    protected $url = '';
+    protected string $text = '';
+
+    protected string $url = '';
     /** @var self[] */
-    protected $children_arr = [];
-    /** @var string */
-    protected $icon_classes_str = '';
-    /** @var array */
-    protected $permissions_arr = [];
+
+    protected array $children_arr = [];
+
+    protected string $icon_classes_str = '';
+
+    protected array $permissions_arr = [];
 
     /**
      * MenuItem constructor.

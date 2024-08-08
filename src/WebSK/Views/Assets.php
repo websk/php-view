@@ -11,13 +11,13 @@ use WebSK\Utils\Url;
  */
 class Assets
 {
-    const ASSETS_DIR_NAME = 'assets';
+    const string ASSETS_DIR_NAME = 'assets';
 
     /**
-     * @param $resource
+     * @param string $resource
      * @return string
      */
-    public static function wrapAssetsVersion($resource)
+    public static function wrapAssetsVersion(string $resource): string
     {
         $assetsVersion = ConfWrapper::value('assets_version', 1);
         $assetsUrlPath = ConfWrapper::value('assets_url_path', self::ASSETS_DIR_NAME);

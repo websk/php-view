@@ -8,44 +8,34 @@ namespace WebSK\Views;
  */
 class LayoutDTO
 {
-    /** @var string */
-    protected $title = '';
+    protected string $title = '';
 
-    /** @var string */
-    protected $site_title = '';
+    protected string $site_title = '';
 
-    /** @var string */
-    protected $short_site_title = '';
+    protected string $short_site_title = '';
 
-    /** @var int */
-    protected $user_id = null;
+    protected ?int $user_id = null;
 
-    /** @var string */
-    protected $user_name = '';
+    protected string $user_name = '';
 
-    /** @var string */
-    protected $logout_url = '';
+    protected string $logout_url = '';
 
     /** @var MenuItemDTO[] */
-    protected $menu_item_dto_arr = [];
+    protected array $menu_item_dto_arr = [];
 
-    /** @var string */
-    protected $content_html = '';
+    protected string $content_html = '';
 
-    /** @var string */
-    protected $page_url = '';
+    protected string $page_url = '';
 
     /** @var NavTabItemDTO[] */
-    protected $nav_tabs_dto_arr = [];
+    protected array $nav_tabs_dto_arr = [];
 
     /** @var BreadcrumbItemDTO[] */
-    protected $breadcrumbs_dto_arr = [];
+    protected array $breadcrumbs_dto_arr = [];
 
-    /** @var string */
-    protected $description = '';
+    protected string $description = '';
 
-    /** @var string */
-    protected $keywords = '';
+    protected string $keywords = '';
 
     /**
      * @return string
