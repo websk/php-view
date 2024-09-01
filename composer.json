@@ -4,7 +4,7 @@
     "php": "^8.3",
     "websk/php-utils": "2.0.*",
     "websk/php-config": "2.0.*",
-    "websk/php-slim": "2.0.*",
+    "websk/php-slim": "2.1.*",
     "ext-mbstring": "*"
   },
   "autoload": {
