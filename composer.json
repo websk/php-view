@@ -5,6 +5,7 @@
     "websk/php-utils": "2.0.*",
     "websk/php-config": "2.0.*",
     "websk/php-slim": "2.2.*",
+    "slim/php-view": "3.4.*",
     "ext-mbstring": "*"
   },
   "autoload": {
