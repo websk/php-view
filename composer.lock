@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90a4019d60e21d21508e2b5dd173c863",
+    "content-hash": "07be7cb94507807814833d9e1ec59fe6",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -925,16 +925,16 @@
         },
         {
             "name": "websk/php-slim",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/websk/php-slim.git",
-                "reference": "459df625c02d0e31db24a7567563c92890cdd8d7"
+                "reference": "c45d2e5ebb2537db2a9fefec4d1743148720e066"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websk/php-slim/zipball/459df625c02d0e31db24a7567563c92890cdd8d7",
-                "reference": "459df625c02d0e31db24a7567563c92890cdd8d7",
+                "url": "https://api.github.com/repos/websk/php-slim/zipball/c45d2e5ebb2537db2a9fefec4d1743148720e066",
+                "reference": "c45d2e5ebb2537db2a9fefec4d1743148720e066",
                 "shasum": ""
             },
             "require": {
@@ -955,29 +955,28 @@
             "homepage": "https://websk.ru/",
             "support": {
                 "issues": "https://github.com/websk/php-slim/issues",
-                "source": "https://github.com/websk/php-slim/tree/2.2.1"
+                "source": "https://github.com/websk/php-slim/tree/2.2.2"
             },
-            "time": "2025-03-15T15:56:13+00:00"
+            "time": "2025-03-24T07:04:37+00:00"
         },
         {
             "name": "websk/php-utils",
-            "version": "2.0.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/websk/php-utils.git",
-                "reference": "ba0e4ab23f2e91f24769d2c74042e6b993724974"
+                "reference": "1fe69ffbf539aa62aa536b1ac11b09759f41e71e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websk/php-utils/zipball/ba0e4ab23f2e91f24769d2c74042e6b993724974",
-                "reference": "ba0e4ab23f2e91f24769d2c74042e6b993724974",
+                "url": "https://api.github.com/repos/websk/php-utils/zipball/1fe69ffbf539aa62aa536b1ac11b09759f41e71e",
+                "reference": "1fe69ffbf539aa62aa536b1ac11b09759f41e71e",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "php": "^8.3",
-                "websk/php-config": "2.0.*"
+                "php": "^8.3"
             },
             "type": "library",
             "autoload": {
@@ -989,21 +988,21 @@
             "description": "PHP utils",
             "support": {
                 "issues": "https://github.com/websk/php-utils/issues",
-                "source": "https://github.com/websk/php-utils/tree/2.0.0"
+                "source": "https://github.com/websk/php-utils/tree/2.1.1"
             },
-            "time": "2024-08-08T07:42:18+00:00"
+            "time": "2025-03-25T05:39:40+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.3",
         "ext-mbstring": "*"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }
