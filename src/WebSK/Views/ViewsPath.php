@@ -2,6 +2,7 @@
 
 namespace WebSK\Views;
 
+use UnexpectedValueException;
 use WebSK\Config\ConfWrapper;
 
 /**
@@ -17,7 +18,7 @@ class ViewsPath
 
     public static function getSiteSrcPath(): string
     {
-        return ConfWrapper::value(self::SITE_FULL_PATH_CONFIG_KEY) . DIRECTORY_SEPARATOR . self::SRC_DIR_NAME;
+        return self::getSiteFullPath() . DIRECTORY_SEPARATOR . self::SRC_DIR_NAME;
     }
 
     /**
@@ -25,7 +26,7 @@ class ViewsPath
      */
     public static function getSiteViewsPath(): string
     {
-        return ConfWrapper::value(self::SITE_FULL_PATH_CONFIG_KEY) . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME;
+        return self::getSiteFullPath() . DIRECTORY_SEPARATOR . ViewsPath::VIEWS_DIR_NAME;
     }
 
     /**
@@ -34,7 +35,7 @@ class ViewsPath
      */
     public static function getFullTemplatePath(string $template): string
     {
-        return ConfWrapper::value(self::SITE_FULL_PATH_CONFIG_KEY) . DIRECTORY_SEPARATOR . $template;
+        return self::getSiteFullPath() . DIRECTORY_SEPARATOR . $template;
     }
 
     /**
@@ -46,10 +47,18 @@ class ViewsPath
     {
         $template_path = ViewsPath::VIEWS_DIR_NAME .  DIRECTORY_SEPARATOR . ViewsPath::VIEWS_MODULES_DIR . DIRECTORY_SEPARATOR . $module . DIRECTORY_SEPARATOR . $template;
 
-        if (file_exists(self::getFullTemplatePath($template_path))) {
-            return true;
+        return file_exists(self::getFullTemplatePath($template_path));
+    }
+
+    private static function getSiteFullPath(): string
+    {
+        $siteFullPath = ConfWrapper::value(self::SITE_FULL_PATH_CONFIG_KEY);
+        if (!is_string($siteFullPath)) {
+            throw new UnexpectedValueException(
+                sprintf('Configuration value "%s" must be a string', self::SITE_FULL_PATH_CONFIG_KEY)
+            );
         }
 
-        return false;
+        return $siteFullPath;
     }
 }

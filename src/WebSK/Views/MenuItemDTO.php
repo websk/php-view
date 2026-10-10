@@ -11,21 +11,22 @@ class MenuItemDTO
     protected string $text = '';
 
     protected string $url = '';
-    /** @var self[] */
 
+    /** @var array<array-key, self> */
     protected array $children_arr = [];
 
     protected string $icon_classes_str = '';
 
+    /** @var array<array-key, mixed> */
     protected array $permissions_arr = [];
 
     /**
      * MenuItem constructor.
      * @param string $text
      * @param string $url
-     * @param array $children_arr
+     * @param array<array-key, self> $children_arr
      * @param string $icon_classes_str
-     * @param array $permissions_arr
+     * @param array<array-key, mixed> $permissions_arr
      */
     public function __construct(
         string $text = '',
@@ -74,7 +75,7 @@ class MenuItemDTO
     }
 
     /**
-     * @return self[]
+     * @return array<array-key, self>
      */
     public function getChildrenArr(): array
     {
@@ -82,7 +83,7 @@ class MenuItemDTO
     }
 
     /**
-     * @param array $children_arr
+     * @param array<array-key, self> $children_arr
      */
     public function setChildrenArr(array $children_arr): void
     {
@@ -106,7 +107,7 @@ class MenuItemDTO
     }
 
     /**
-     * @return array
+     * @return array<array-key, mixed>
      */
     public function getPermissionsArr(): array
     {
@@ -114,7 +115,7 @@ class MenuItemDTO
     }
 
     /**
-     * @param array $permissions_arr
+     * @param array<array-key, mixed> $permissions_arr
      */
     public function setPermissionsArr(array $permissions_arr): void
     {

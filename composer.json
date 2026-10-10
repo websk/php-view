@@ -1,16 +1,38 @@
 {
   "name": "websk/php-view",
+  "description": "PHP view rendering utilities",
+  "type": "library",
+  "license": "MIT",
   "require": {
     "php": "^8.3",
     "websk/php-utils": "2.1.*",
     "websk/php-config": "2.0.*",
-    "websk/php-slim": "2.3.*",
+    "websk/php-slim": "2.4.*",
     "slim/php-view": "3.4.*",
     "ext-mbstring": "*"
   },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^12.5"
+  },
   "autoload": {
     "psr-4": {
-      "": "src/"
+      "WebSK\\": "src/WebSK/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WebSK\\Views\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "lint": "find src tests -name '*.php' -print0 | xargs -0 -n1 php -l",
+    "test": "php -d error_reporting=E_ALL vendor/bin/phpunit",
+    "phpstan": "php -d error_reporting=E_ALL vendor/bin/phpstan analyse --no-progress --debug",
+    "check": [
+      "@lint",
+      "@test",
+      "@phpstan"
+    ]
   }
 }

@@ -20,17 +20,17 @@ class LayoutDTO
 
     protected string $logout_url = '';
 
-    /** @var MenuItemDTO[] */
+    /** @var array<array-key, MenuItemDTO> */
     protected array $menu_item_dto_arr = [];
 
     protected string $content_html = '';
 
     protected string $page_url = '';
 
-    /** @var NavTabItemDTO[] */
+    /** @var array<array-key, NavTabItemDTO> */
     protected array $nav_tabs_dto_arr = [];
 
-    /** @var BreadcrumbItemDTO[] */
+    /** @var array<array-key, BreadcrumbItemDTO> */
     protected array $breadcrumbs_dto_arr = [];
 
     protected string $description = '';
@@ -48,7 +48,7 @@ class LayoutDTO
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -64,7 +64,7 @@ class LayoutDTO
     /**
      * @param string $site_title
      */
-    public function setSiteTitle(string $site_title)
+    public function setSiteTitle(string $site_title): void
     {
         $this->site_title = $site_title;
     }
@@ -80,7 +80,7 @@ class LayoutDTO
     /**
      * @param string $short_site_title
      */
-    public function setShortSiteTitle(string $short_site_title)
+    public function setShortSiteTitle(string $short_site_title): void
     {
         $this->short_site_title = $short_site_title;
     }
@@ -112,7 +112,7 @@ class LayoutDTO
     /**
      * @param string $user_name
      */
-    public function setUserName(string $user_name)
+    public function setUserName(string $user_name): void
     {
         $this->user_name = $user_name;
     }
@@ -128,13 +128,13 @@ class LayoutDTO
     /**
      * @param string $logout_url
      */
-    public function setLogoutUrl(string $logout_url)
+    public function setLogoutUrl(string $logout_url): void
     {
         $this->logout_url = $logout_url;
     }
 
     /**
-     * @return MenuItemDTO[]
+     * @return array<array-key, MenuItemDTO>
      */
     public function getMenuItemDtoArr(): array
     {
@@ -142,9 +142,9 @@ class LayoutDTO
     }
 
     /**
-     * @param MenuItemDTO[] $menu_item_dto_arr
+     * @param array<array-key, MenuItemDTO> $menu_item_dto_arr
      */
-    public function setMenuItemDtoArr(array $menu_item_dto_arr)
+    public function setMenuItemDtoArr(array $menu_item_dto_arr): void
     {
         $this->menu_item_dto_arr = $menu_item_dto_arr;
     }
@@ -160,7 +160,7 @@ class LayoutDTO
     /**
      * @param string $content_html
      */
-    public function setContentHtml(string $content_html)
+    public function setContentHtml(string $content_html): void
     {
         $this->content_html = $content_html;
     }
@@ -176,13 +176,13 @@ class LayoutDTO
     /**
      * @param string $page_url
      */
-    public function setPageUrl(string $page_url)
+    public function setPageUrl(string $page_url): void
     {
         $this->page_url = $page_url;
     }
 
     /**
-     * @return array
+     * @return array<array-key, NavTabItemDTO>
      */
     public function getNavTabsDtoArr(): array
     {
@@ -190,7 +190,7 @@ class LayoutDTO
     }
 
     /**
-     * @param array $nav_tabs_dto_arr
+     * @param array<array-key, NavTabItemDTO> $nav_tabs_dto_arr
      */
     public function setNavTabsDtoArr(array $nav_tabs_dto_arr): void
     {
@@ -198,7 +198,7 @@ class LayoutDTO
     }
 
     /**
-     * @return BreadcrumbItemDTO[]
+     * @return array<array-key, BreadcrumbItemDTO>
      */
     public function getBreadcrumbsDtoArr(): array
     {
@@ -206,7 +206,7 @@ class LayoutDTO
     }
 
     /**
-     * @param BreadcrumbItemDTO[] $breadcrumbs_dto_arr
+     * @param array<array-key, BreadcrumbItemDTO> $breadcrumbs_dto_arr
      */
     public function setBreadcrumbsDtoArr(array $breadcrumbs_dto_arr): void
     {
