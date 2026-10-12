@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76803c53e56e5d4fbdb657c39a2110bd",
+    "content-hash": "45b0c93bc8d9262bd0c11051fbb406cd",
     "packages": [
         {
             "name": "fig/http-message-util",
@@ -811,35 +811,41 @@
         },
         {
             "name": "websk/php-config",
-            "version": "2.0.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/websk/php-config.git",
-                "reference": "57f0481617988daffea45ef871f78a09dc58f233"
+                "reference": "8a924f3dbfdd66bbcefc59717d8b4aa93467ec62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websk/php-config/zipball/57f0481617988daffea45ef871f78a09dc58f233",
-                "reference": "57f0481617988daffea45ef871f78a09dc58f233",
+                "url": "https://api.github.com/repos/websk/php-config/zipball/8a924f3dbfdd66bbcefc59717d8b4aa93467ec62",
+                "reference": "8a924f3dbfdd66bbcefc59717d8b4aa93467ec62",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.3"
             },
+            "require-dev": {
+                "phpunit/phpunit": "^12.5"
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "": "src/"
+                    "WebSK\\": "src/WebSK/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "description": "PHP configs wrapper",
             "homepage": "https://websk.ru/",
             "support": {
                 "issues": "https://github.com/websk/php-config/issues",
-                "source": "https://github.com/websk/php-config/tree/2.0.0"
+                "source": "https://github.com/websk/php-config/tree/2.2.0"
             },
-            "time": "2024-08-08T07:17:03+00:00"
+            "time": "2026-10-05T03:57:43+00:00"
         },
         {
             "name": "websk/php-slim",
@@ -886,16 +892,16 @@
         },
         {
             "name": "websk/php-utils",
-            "version": "2.1.1",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/websk/php-utils.git",
-                "reference": "1fe69ffbf539aa62aa536b1ac11b09759f41e71e"
+                "reference": "eaf32ae7124e3bfa9e06e9c3a7f2e07ed7c0c866"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/websk/php-utils/zipball/1fe69ffbf539aa62aa536b1ac11b09759f41e71e",
-                "reference": "1fe69ffbf539aa62aa536b1ac11b09759f41e71e",
+                "url": "https://api.github.com/repos/websk/php-utils/zipball/eaf32ae7124e3bfa9e06e9c3a7f2e07ed7c0c866",
+                "reference": "eaf32ae7124e3bfa9e06e9c3a7f2e07ed7c0c866",
                 "shasum": ""
             },
             "require": {
@@ -903,19 +909,25 @@
                 "ext-mbstring": "*",
                 "php": "^8.3"
             },
+            "require-dev": {
+                "phpunit/phpunit": "^12.5"
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "": "src/"
+                    "WebSK\\": "src/WebSK/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "description": "PHP utils",
             "support": {
                 "issues": "https://github.com/websk/php-utils/issues",
-                "source": "https://github.com/websk/php-utils/tree/2.1.1"
+                "source": "https://github.com/websk/php-utils/tree/3.0.0"
             },
-            "time": "2025-03-25T05:39:40+00:00"
+            "time": "2026-10-04T15:23:02+00:00"
         }
     ],
     "packages-dev": [

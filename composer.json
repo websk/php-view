@@ -5,8 +5,8 @@
   "license": "MIT",
   "require": {
     "php": "^8.3",
-    "websk/php-utils": "2.1.*",
-    "websk/php-config": "2.0.*",
+    "websk/php-utils": "3.0.*",
+    "websk/php-config": "2.2.*",
     "websk/php-slim": "2.4.*",
     "slim/php-view": "3.4.*",
     "ext-mbstring": "*"
@@ -24,6 +24,14 @@
     "psr-4": {
       "WebSK\\Views\\Tests\\": "tests/"
     }
+  },
+  "archive": {
+    "exclude": [
+      "/.idea",
+      "/.phpstan-cache",
+      "/.phpunit.cache",
+      "/vendor"
+    ]
   },
   "scripts": {
     "lint": "find src tests -name '*.php' -print0 | xargs -0 -n1 php -l",
